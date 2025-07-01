@@ -2,11 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('artikel.urls')),  # Landing page diarahkan ke app artikel
-    path('galeri/', include('galeri.urls')),  # Galeri (kalau punya halaman tersendiri)
+    path('', views.index, name='galeri_index'),  # Galeri (kalau punya halaman tersendiri)
 ]
 
 if settings.DEBUG:

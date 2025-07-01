@@ -8,6 +8,7 @@ from django.contrib.auth.hashers import make_password
 from django.shortcuts import render
 from django.shortcuts import render
 from .models import Artikel, Kategori
+from django.shortcuts import render
 
 def in_operator(user):
     return user.groups.filter(name='Operator').exists()
@@ -246,3 +247,6 @@ def home(request):
     return render(request, 'landingpage/index.html', {
         'artikels': artikels,
     })
+
+def index(request):
+    return render(request, 'galeri/index.html')
