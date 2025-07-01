@@ -24,6 +24,7 @@ from artikel.views import (
 
 urlpatterns = [
     # Artikel Teknologi API
+    path('', views.home, name='home'),
     path('artikel-teknologi/', views.artikel_teknologi, name='artikel_teknologi'),
 
     ########################### Fungsi untuk user biasa ##############
