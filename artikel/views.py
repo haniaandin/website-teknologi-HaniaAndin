@@ -6,7 +6,8 @@ from artikel.models import Artikel, Kategori
 from artikel.forms import ArtikelForm, KategoriForm, UserEditForm
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render
-import requests
+from django.shortcuts import render
+from .models import Artikel, Kategori
 
 def in_operator(user):
     return user.groups.filter(name='Operator').exists()
@@ -242,6 +243,6 @@ def home(request):
     else:
         artikels = []
 
-    return render(request, 'index.html', {
+    return render(request, 'landingpage/index.html', {
         'artikels': artikels,
     })
