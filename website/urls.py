@@ -6,8 +6,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('artikel.urls')),  # Landing page diarahkan ke app artikel
-    path('', views.index, name='galeri_index'),  # Galeri (kalau punya halaman tersendiri)
+    path('', views.home, name='home'),  # Default homepage
+    path('galeri/', include('galeri.urls')),
+    path('artikel/', include('artikel.urls')),
 ]
 
 if settings.DEBUG:

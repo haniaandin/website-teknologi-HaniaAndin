@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6c6xb^4!soed-9^pul#hc6$4*kb^+m1wc6kp_4dm$=0q2b(cto
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['haniaandin211.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'haniaandin211.pythonanywhere.com']
 
 # Application definition
 
@@ -115,9 +115,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+# Ini tempat kamu simpan file CSS/JS/manual
+STATICFILES_DIRS = [
+    BASE_DIR / 'staticfiles'
+]
+
+# Ini tempat Django akan menaruh file hasil collectstatic (jangan diedit langsung!)
 STATIC_ROOT = BASE_DIR / 'static'
-STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
